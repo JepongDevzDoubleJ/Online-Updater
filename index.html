@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+
+  <head>
+
+    <meta charset="utf-8">
+
+<title>Download Update</title>
+
+<link rel="shortcut icon" type="image/png" href="https://raw.githubusercontent.com/JDevzDoubleJ/Project-404/main/imageedit_6_7210741026.png"/>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+
+  </head>
+
+  <style>
+
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+  
+
+  *{
+
+  margin: 0;
+
+  padding: 0;
+
+  box-sizing: border-box;
+
+  font-family: "Poppins", sans-serif;
+
+  }
+
+  
+
+  body{
+
+  min-height: 100vh;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  }
+
+  
+
+  .download-container{
+
+  position: relative;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  flex-direction: column;
+
+  }
+
+  
+
+  .download-btn{
+
+  position: relative;
+
+  background: #4285F4;
+
+  color: #fff;
+
+  width: 260px;
+
+  padding: 18px 0;
+
+  text-align: center;
+
+  font-size: 1.3em;
+
+  font-weight: 400;
+
+  text-decoration: none;
+
+  border-radius: 5px;
+
+  box-shadow: 0 5px 25px rgba(1 1 1 / 15%);
+
+  transition: background 0.3s ease;
+
+  }
+
+  
+
+  .download-btn:hover{
+
+  background: #2874F3;
+
+  }
+
+  
+
+  .download-btn i{
+
+  margin-left: 5px;
+
+  }
+
+  
+
+  .countdown{
+
+  font-size: 1.5em;
+
+  font-weight: 700;
+
+  margin-bottom: 20px;
+
+  }
+
+  
+
+  .countdown span{
+
+  color: #0693F6;
+
+  font-size: 1.5em;
+
+  font-weight: 800;
+
+  }
+
+  
+
+  .pleaseWait-text{
+
+  font-size: 1.1em;
+
+  font-weight: 600;
+
+  display: none;
+
+  }
+
+  
+
+  .manualDownload-text{
+
+  font-size: 1.1em;
+
+  font-weight: 600;
+
+  display: none;
+
+  }
+
+  
+
+  .manualDownload-link{
+
+  color: #0693F6;
+
+  font-weight: 800;
+
+  text-decoration: none;
+
+  }
+
+  
+
+  .fadownloads {
+
+  font-size: 25px;
+
+  }
+
+  
+
+  
+
+  </style>
+
+  <body>
+
+    <div class="download-container">
+
+    <b><p class="fadownloads" style="text-align:center"> Jepong Project Paid VPN<br>Latest Version</p></b>
+
+      <a href="#" class="download-btn"> <i class="fas fa-download"></i> Download<i class="fas fa-download"></i></a>
+
+      <div class="countdown"></div>
+
+      <div class="pleaseWait-text">Granting your request...</div>
+
+      <div class="manualDownload-text">
+
+      <p style="text-align:center">  If the download didn't start automatically. <a href="https://github.com/JDevzDoubleJ/APK-UPDATER/blob/main/Jepong%20Project%20Paid%20VPN%20v11-2002.22.2.apk?raw=true" class="manualDownload-link">click here!</a>
+
+</p>
+
+      </div>
+
+    </div>
+
+    <script type="text/javascript">
+
+    const downloadBtn = document.querySelector(".download-btn");
+
+    const countdown = document.querySelector(".countdown");
+
+    const pleaseWaitText = document.querySelector(".pleaseWait-text");
+
+    const manualDownloadText = document.querySelector(".manualDownload-text");
+
+    const manualDownloadLink = document.querySelector(".manualDownload-link");
+
+    var timeLeft = 10;
+
+    downloadBtn.addEventListener("click", () => {
+
+      downloadBtn.style.display = "none";
+
+      countdown.innerHTML = "Download will begin automatically in <span>" + timeLeft + "</span>s"; //for quick start of countdown
+
+      var downloadTimer = setInterval(function timeCount(){
+
+        timeLeft -= 1;
+
+        countdown.innerHTML = "Download will begin automatically in <span>" + timeLeft + "</span>s";
+
+        if(timeLeft <= 0){
+
+          clearInterval(downloadTimer);
+
+          pleaseWaitText.style.display = "block";
+
+          let download_href = "https://github.com/JDevzDoubleJ/APK-UPDATER/blob/main/Jepong%20Project%20Paid%20VPN%20v11-2002.22.2.apk?raw=true"; //enter the downloadable file link URL here
+
+          window.location.href = download_href;
+
+          manualDownloadLink.href = download_href;
+
+          setTimeout(() => {
+
+            pleaseWaitText.style.display = "none";
+
+            manualDownloadText.style.display = "block";
+
+          }, 4000);
+
+        }
+
+      }, 1000);
+
+    });
+
+    </script>
+
+  </body>
+
+</html>
+
+      
